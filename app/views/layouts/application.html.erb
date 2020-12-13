@@ -11,36 +11,37 @@
 
   <body>
      <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
       <a class="navbar-brand" href="/"><span>Bookers</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+        <div class="ml-auto nav-style">
           <% if user_signed_in? %>
-          <li><a class="fas fa-home nav-link text-light" href="/users/8545"> Home</a></li>
+          <li><a class="fas fa-home nav-link text-light" href="/users/8545"><p class="text-light">Home1</p></a></li>
           <li><a class="fas fa-users nav-link text-light" href="/users"> Users</a></li>
           <li><a class="fas fa-book-open nav-link text-light" href="/books"> Books</a></li>
           <li><a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
          <% else %>
+           <p>
+             <%= link_to root_path do %>
+            <span class="fas fa-home text-light">Home</span>
+            <% end %>
+           </p>
          　 <li>
-            <%= link_to "Home", new_user_registration_path %><a class="fas fa-home nav-link text-light" href="/users/8545"></a>
-         　 </li>
-         　 <li>
-            <%= link_to "Users", new_user_session_path %><a class="fas fa-users nav-link text-light" href="/users"></a>
+         　  <%= link_to root_path do %>
+            <p class="fas fa-users text-light">Users</p>
+            <% end %>
           　</li>
           　 <li>
-            <%= link_to "Books", new_user_session_path %><a class="fas fa-book-open nav-link text-light" href="/books"></a>
+          　    <%= link_to root_path do %>
+            <p class="fas fa-book-open text-light">Books</p>
+            <% end %>
           　</li>
           　 <li>
-            <%= link_to "logout", new_user_session_path %><a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"></a>
+          　    <%= link_to root_path do %>
+            <a class="fas fa-sign-out-alt text-light">logout</p>
+            <% end %>
           　</li>
         　<% end %>
-        </ul>
-      </div>
-    </div>
+        </div>
   </nav>
 </header>
 

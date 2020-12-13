@@ -13,4 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
 @import "bootstrap";
+
+.nav {
+  height: 56px;
+}
+
+.nav-style {
+  display: flex;
+  list-style: none;
+  color: #fff;
+}
+
+.list-height {
+  height: 56px;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.under {
+  margin-bottom: 16px !important;
+}
