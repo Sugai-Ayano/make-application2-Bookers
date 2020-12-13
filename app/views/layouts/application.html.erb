@@ -15,7 +15,7 @@
       <a class="navbar-brand" href="/"><span>Bookers</span></a>
         <div class="ml-auto nav-style">
           <% if user_signed_in? %>
-          <li><a class="fas fa-home nav-link text-light" href="/users/8545"><p class="text-light">Home1</p></a></li>
+          <li><a class="fas fa-home nav-link text-light" href=/top><p class="text-light">Home</p></a></li>
           <li><a class="fas fa-users nav-link text-light" href="/users"> Users</a></li>
           <li><a class="fas fa-book-open nav-link text-light" href="/books"> Books</a></li>
           <li><a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
@@ -25,21 +25,21 @@
             <span class="fas fa-home text-light">Home</span>
             <% end %>
            </p>
-         　 <li>
+         　<p>
          　  <%= link_to root_path do %>
-            <p class="fas fa-users text-light">Users</p>
+            <span class="fas fa-users text-light">Users</span>
             <% end %>
-          　</li>
-          　 <li>
+          　</p>
+          　 <p>
           　    <%= link_to root_path do %>
-            <p class="fas fa-book-open text-light">Books</p>
+            <span class="fas fa-book-open text-light">Books</span>
             <% end %>
-          　</li>
-          　 <li>
+          　</p>
+          　 <p>
           　    <%= link_to root_path do %>
-            <a class="fas fa-sign-out-alt text-light">logout</p>
+            <span class="fas fa-sign-out-alt text-light">logout</span>
             <% end %>
-          　</li>
+          　</p>
         　<% end %>
         </div>
   </nav>
