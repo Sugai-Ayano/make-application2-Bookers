@@ -9,12 +9,9 @@
       <table class='table'>
   <tr><img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" /></tr>
   <tr>
-	  <th>name</th>
-	  <th>あやの</th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th></th>
+    <%= current_user.name %>
+    <%= current_user.introduction %>
+
   </tr>
 </table>
 
@@ -42,7 +39,6 @@
       <table class='table table-hover table-inverse'>
   <thead>
     <tr>
-      <th></th>
       <th>Title</th>
       <th>Opinion</th>
       <th colspan="3"></th>
@@ -50,32 +46,13 @@
   </thead>
   <tbody>
       <tr>
-        <td><a href="/users/8675">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
-</a>        </td>
-        <td><a class="book_7434" href="/books/7434">リーダブルコード</a></td>
-        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
-      </tr>
-      <tr>
-        <td><a href="/users/8676">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
-</a>        </td>
-        <td><a class="book_7435" href="/books/7435">トラブル知らずのシステム設計</a></td>
-        <td>システム設計の要点を図解で説明してくれます。</td>
-      </tr>
-      <tr>
-        <td><a href="/users/8677">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
-</a>        </td>
-        <td><a class="book_7436" href="/books/7436">たのしいRuby</a></td>
-        <td>Rubyの入門におすすめです。</td>
-      </tr>
-      <tr>
-        <td><a href="/users/8679">
-          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
-</a>        </td>
-        <td><a class="book_7437" href="/books/7437">aew</a></td>
-        <td>ewg</td>
+        <% @books.each do |book| %>
+         <td><%= book.title %></td>
+      <td><%= link_to "title", book_path(book.id) %></td>
+    </tr>
+      <% end %>
+       </td>
+
       </tr>
   </tbody>
 </table>
