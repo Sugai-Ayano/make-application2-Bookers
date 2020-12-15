@@ -5,17 +5,19 @@
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
+      <div><%= attachment_image_tag(@user, :profile_image, fallback: "No_image.jpg", size: "100x100") %></div>
       <table class='table'>
-   <tr><%= attachment_image_tag(@user, :profile_image,fallback: "No_image.jpg", size: "100x100") %></tr>
-  <tr>
-    <th>name</tr>
-    <%= current_user.name %>
+          <tbody>
+              <tr>
+    <th>name</th>
+    <td><%= current_user.name %></td>
   </tr>
   <tr>
 	  <th>introduction</th>
 	  <th><%= current_user.introduction %></th>
   </tr>
   </tr>
+  </tbody>
 </table>
 
 <div class='row'>
