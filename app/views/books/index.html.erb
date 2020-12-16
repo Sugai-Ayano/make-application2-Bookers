@@ -3,7 +3,7 @@
         <p id="notice"></p>
         <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <%= render 'users/sidemenu'%>
+    <%= render 'users/sidemenu', book: @book, user: @user %>
  <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <table class='table'>
@@ -19,7 +19,7 @@
     <tr>
      <td><%= attachment_image_tag(@user, :profile_image,fallback: "No_image.jpg", size: "50x50") %></td>
      <td><%= book.title %></td>
-      <td><%= link_to "title", books_path(books.id) %></td>
+      <td><%= link_to "title", books_path(@book.id) %></td>
     </tr>
       <% end %>
   </tbody>
