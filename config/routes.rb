@@ -5,4 +5,5 @@ root to: 'homes#top'
  resources :books, only: [:new, :create, :index, :show, :destroy, :top]
  resources :book_comments, only: [:create, :destroy]
  resources :users, only: [:show, :index, :edit, :update]
+ post 'books' => 'books#create'
 end
