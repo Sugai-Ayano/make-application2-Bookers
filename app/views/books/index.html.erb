@@ -1,5 +1,11 @@
 <!--booksの一覧-->
- <main>
+  <main>
+  <% if @book.errors.any? %>
+  <%= @book.errors.count %> error prohibited this book from being saved:
+  <% @book.errors.full_messages.each do |message| %>
+  <%= message %>
+   <% end %>
+  <% end %>
         <p id="notice"></p>
         <div class='container px-5 px-sm-0'>
   <div class='row'>
