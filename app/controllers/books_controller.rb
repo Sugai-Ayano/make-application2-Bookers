@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    @user = current_user
     @books = Book.all
     @book = Book.new(book_params)
     if @book.save
