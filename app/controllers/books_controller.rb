@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :user_filter, only: [:destroy, :edit, :update]
+
   def homes
   end
 
@@ -10,6 +12,7 @@ class BooksController < ApplicationController
 
   def show
      @book = Book.find(params[:id])
+     @book_new = Book.new
      @books = Book.all
      @user = current_user
      @users = User.all
@@ -52,5 +55,12 @@ class BooksController < ApplicationController
     private
   def book_params
     params.require(:book).permit(:title, :opinion)
+  end
+
+  def user_filter
+    @book = Book.find(params[:id])
+   if current_user == @book.user
+   else redirect_to books_path
+   end
   end
 end
