@@ -5,5 +5,9 @@ class HomesController < ApplicationController
   def show
     @user = current_user
   end
+
+  def about
+  end
+
 end
 
