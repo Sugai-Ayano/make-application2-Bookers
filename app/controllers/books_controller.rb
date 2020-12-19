@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :user_filter, only: [:destroy, :edit, :update]
-
+  before_action :authenticate_user!
   def homes
   end
 
