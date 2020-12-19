@@ -23,27 +23,14 @@
           <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-light" %></li>
 
          <% else %>
-           <p>
-             <%= link_to root_path do %>
-            <span class="fas fa-home text-light">Home</span>
-            <% end %>
-           </p>
-         　<p>
-         　  <%= link_to home_about_path do %>
-            <span class="fas fa-users text-light">About</span>
-            <% end %>
-          　</p>
-          　 <p>
-          　    <%= link_to new_user_registration_path do %>
-            <span class="fas fa-book-open text-light">sign up</span>
-            <% end %>
-          　</p>
-          　 <p>
-          　    <%= link_to new_user_session_path do %>
-            <span class="fas fa-sign-out-alt text-light">login</span>
-            <% end %>
-          　</p>
-        　<% end %>
+          <li><%= link_to 'Home', root_path, class: "fas fa-home nav-link text-light" %></li>
+
+          <li><%= link_to 'About',  home_about_path, class: ".fas.fa-link" %></li>
+
+          <li><%= link_to 'sign up',  new_user_registration_path, class:"fas fa-book-open text-light" %></li>
+
+          <li><%= link_to 'login',  new_user_session_path, class:"fas fa-sign-out-alt text-light" %></li>
+          <% end %>
         </div>
   </nav>
 </header>
