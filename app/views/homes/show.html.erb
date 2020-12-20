@@ -1,35 +1,35 @@
-<main>
+  <main>
      <p id="notice"></p>
         <div class='container px-5 px-sm-0'>
         <div class='row'>
-         <%= render 'users/sidemenu', book: @book, user: @user %>
+            <%= render 'users/sidemenu', book: @book, user: @user %>
         <div class='col-md-8 offset-md-1'>
-      <h2>Books</h2>
-      <table class='table table-hover table-inverse'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td>
-          <tr><%= attachment_image_tag(@users, :profile_image, fallback: "No_image.jpg", size: "100x100") %></tr>
-        </td>
-        <tr>
-        <% @books.each do |book| %>
-         <td><%= book.title %></td>
-         <td><%= link_to "title", book_path(book.id) %></td>
-    </tr>
-        <% end %>
-      </tr>
-  </tbody>
-</table>
-    </div>
-  </div>
-</div>
-</main>
+        <h2>Books</h2>
+            <table class='table table-hover table-inverse'>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Title</th>
+                  <th>Opinion</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <tr><%= attachment_image_tag(@users, :profile_image, fallback: "No_image.jpg", size: "100x100") %></tr>
+                  </td>
+                  <tr>
+                    <% @books.each do |book| %>
+                     <td><%= book.title %></td>
+                     <td><%= link_to "title", book_path(book.id) %></td>
+                  </tr>
+                    <% end %>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        </div>
+        </div>
+  </main>
 <!--usersのshowページ-->
